@@ -5,12 +5,12 @@ import time
 import requests
 import getpass
 
-geckopath = r""  #Path to GeckoDriver on your computer
+geckopath = r""  #Path for GeckoDriver on your system
 
-gmailId = input("enter your college email Id\n")  #Your Mail ID preferably Organisational Mail ID
+gmailId = input("enter your college email Id\n")  
 passWord=getpass.getpass("Enter password for : %s \n" % gmailId) 
 
-dur = int(1)  #Duration of the Meeting in Minutes
+duration =int(input("Enter the time required in minutes\n"))
 meetingLink=input("enter the meeting link\n")
 
 options = FirefoxOptions()
@@ -55,7 +55,7 @@ def meet():
             btn.click()
     else:
         print("not Found")
-    time.sleep(dur*60)
+    time.sleep(duration*60)
     driver.close()
     switch_focus()
     print("exited")
